@@ -1,0 +1,66 @@
+{
+    "id": 1,
+    "title": "Frontend Engineering Assessment",
+    "questions": [
+      {
+        "id": 1,
+        "text": "Which of the following best describes the purpose of React's useState hook?",
+        "options": [
+          { "id": 1, "text": "To manage side effects in a component", "isCorrect": false },
+          { "id": 2, "text": "To manage local component state across renders", "isCorrect": true },
+          { "id": 3, "text": "To handle API requests", "isCorrect": false },
+          { "id": 4, "text": "To optimize component performance", "isCorrect": false }
+        ]
+      },
+      {
+        "id": 2,
+        "text": "What is the primary benefit of using a custom React hook?",
+        "options": [
+          { "id": 5, "text": "It improves rendering performance automatically", "isCorrect": false },
+          { "id": 6, "text": "It allows reuse of stateful logic across components", "isCorrect": true },
+          { "id": 7, "text": "It replaces the need for components", "isCorrect": false },
+          { "id": 8, "text": "It eliminates the need for props", "isCorrect": false }
+        ]
+      },
+      {
+        "id": 3,
+        "text": "In a React application, why is it recommended to keep components small and focused?",
+        "options": [
+          { "id": 9, "text": "To reduce bundle size automatically", "isCorrect": false },
+          { "id": 10, "text": "To make state management unnecessary", "isCorrect": false },
+          { "id": 11, "text": "To improve readability, reusability, and maintainability", "isCorrect": true },
+          { "id": 12, "text": "To avoid using hooks", "isCorrect": false }
+        ]
+      },
+      {
+        "id": 4,
+        "text": "What problem does an abstraction layer (like a separate API module) solve in frontend applications?",
+        "options": [
+          { "id": 13, "text": "It eliminates the need for backend services", "isCorrect": false },
+          { "id": 14, "text": "It separates data fetching logic from UI components", "isCorrect": true },
+          { "id": 15, "text": "It makes the UI render faster automatically", "isCorrect": false },
+          { "id": 16, "text": "It removes the need for state management", "isCorrect": false }
+        ]
+      },
+      {
+        "id": 5,
+        "text": "Why is it important to disable navigation (e.g., Next button) until an answer is selected?",
+        "options": [
+          { "id": 17, "text": "To prevent unnecessary re-renders", "isCorrect": false },
+          { "id": 18, "text": "To enforce complete user input and avoid invalid states", "isCorrect": true },
+          { "id": 19, "text": "To reduce API calls", "isCorrect": false },
+          { "id": 20, "text": "To improve styling consistency", "isCorrect": false }
+        ]
+      },
+      {
+        "id": 6,
+        "text": "What is the main advantage of persisting quiz progress in localStorage?",
+        "options": [
+          { "id": 21, "text": "It improves rendering performance", "isCorrect": false },
+          { "id": 22, "text": "It allows the application to work offline only", "isCorrect": false },
+          { "id": 23, "text": "It enables users to resume progress after a page refresh", "isCorrect": true },
+          { "id": 24, "text": "It replaces backend storage permanently", "isCorrect": false }
+        ]
+      }
+    ]
+  }
