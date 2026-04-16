@@ -108,8 +108,8 @@ function App() {
           <p className="eyebrow">Frontend Assessment</p>
           <h1>Quiz Engine Prototype</h1>
           <p className="subtext">
-            A structured, user-friendly quiz experience with clear navigation
-            and progress tracking.
+            A structured assessment designed to evaluate core frontend
+            engineering concepts.
           </p>
         </header>
 
@@ -125,6 +125,26 @@ function App() {
             className="progress-fill"
             style={{ width: `${progressPercentage}%` }}
           />
+        </div>
+
+        <div className="question-jumper">
+          {questions.map((question, index) => {
+            const isCurrent = index === currentQuestionIndex;
+            const isAnswered = Boolean(answers[question.id]);
+
+            return (
+              <button
+                key={question.id}
+                type="button"
+                className={`jump-button ${isCurrent ? "current" : ""} ${
+                  isAnswered ? "answered" : ""
+                }`}
+                onClick={() => setCurrentQuestionIndex(index)}
+              >
+                {index + 1}
+              </button>
+            );
+          })}
         </div>
 
         <QuestionCard

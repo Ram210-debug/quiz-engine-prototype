@@ -1,16 +1,54 @@
-# React + Vite
+# Assessment Tool ERD
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+```mermaid
+erDiagram
+    QUIZ ||--o{ QUESTION : contains
+    QUESTION ||--o{ ANSWER_OPTION : has
+    STUDENT ||--o{ ASSESSMENT_ATTEMPT : starts
+    QUIZ ||--o{ ASSESSMENT_ATTEMPT : belongs_to
+    ASSESSMENT_ATTEMPT ||--o{ STUDENT_RESPONSE : includes
+    QUESTION ||--o{ STUDENT_RESPONSE : answered_by
+    ANSWER_OPTION ||--o{ STUDENT_RESPONSE : selected_in
 
-Currently, two official plugins are available:
+    QUIZ {
+        int id PK
+        string title
+        string description
+    }
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+    QUESTION {
+        int id PK
+        int quiz_id FK
+        string text
+        int display_order
+    }
 
-## React Compiler
+    ANSWER_OPTION {
+        int id PK
+        int question_id FK
+        string text
+        boolean is_correct
+    }
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+    STUDENT {
+        int id PK
+        string name
+        string email
+    }
 
-## Expanding the ESLint configuration
+    ASSESSMENT_ATTEMPT {
+        int id PK
+        int student_id FK
+        int quiz_id FK
+        datetime started_at
+        datetime submitted_at
+        int score
+    }
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+    STUDENT_RESPONSE {
+        int id PK
+        int attempt_id FK
+        int question_id FK
+        int selected_option_id FK
+    }
+```
